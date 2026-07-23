@@ -1,0 +1,126 @@
+.deal-page {
+  background: linear-gradient(180deg, var(--clr-linen) 0%, var(--clr-linen-deep) 100%);
+  padding: 130px 0 100px;
+  min-height: 60vh;
+}
+
+.deal-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-espresso-soft);
+  background: var(--clr-cream);
+  border: 1px solid var(--clr-line);
+  padding: 10px 18px 10px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-float-sm);
+  margin-bottom: 36px;
+  transition: transform 0.3s var(--ease-out), color 0.3s ease;
+}
+
+.deal-page__back:hover {
+  transform: translateX(-3px);
+  color: var(--clr-sage-deep);
+}
+
+.deal-page__layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.deal-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.deal-page__header {
+  background: var(--clr-cream);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-float-sm);
+  border: 1px solid rgba(58, 50, 41, 0.06);
+  position: relative;
+}
+
+.deal-page__badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.deal-page__title {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.deal-page__location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: var(--clr-sage-deep);
+  margin-bottom: 18px;
+}
+
+.deal-page__specs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--clr-espresso-soft);
+  margin-bottom: 20px;
+}
+
+.deal-page__specs .dot {
+  opacity: 0.4;
+}
+
+.deal-page__price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--clr-espresso);
+}
+
+.deal-page__about {
+  background: var(--clr-cream);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-float-sm);
+  border: 1px solid rgba(58, 50, 41, 0.06);
+}
+
+.deal-page__about-title {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.deal-page__description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--clr-espresso-soft);
+}
+
+.deal-page__loading {
+  padding: 80px 0;
+  text-align: center;
+  color: var(--clr-espresso-soft);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .deal-page__layout {
+    grid-template-columns: 1fr;
+  }
+  .deal-page {
+    padding-top: 110px;
+  }
+}

@@ -1,0 +1,67 @@
+.lang-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-transition__panel {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.lang-transition__panel--a {
+  background: var(--clr-espresso);
+}
+
+.lang-transition__panel--b {
+  background: var(--clr-sage-deep);
+  transition-delay: 0.06s;
+  opacity: 0.85;
+}
+
+.lang-transition__mark {
+  color: var(--clr-cream);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.3s ease, transform 0.4s var(--ease-out);
+  transition-delay: 0.28s;
+}
+
+.lang-transition__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px rgba(251, 248, 242, 0.25);
+  display: block;
+}
+
+.lang-transition--active .lang-transition__panel {
+  transform: translateY(0%);
+}
+
+.lang-transition--active .lang-transition__panel--a {
+  transition-delay: 0s;
+}
+
+.lang-transition--active .lang-transition__panel--b {
+  transition-delay: 0.05s;
+}
+
+.lang-transition--active .lang-transition__mark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-transition__panel,
+  .lang-transition__mark {
+    transition: none;
+  }
+}

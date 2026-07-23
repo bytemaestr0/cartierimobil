@@ -1,0 +1,76 @@
+.all-deals {
+  position: relative;
+  padding: 140px 0 100px;
+  background: linear-gradient(180deg, var(--clr-linen) 0%, var(--clr-linen-deep) 100%);
+}
+
+.all-deals__search-row {
+  margin-top: 34px;
+  display: flex;
+}
+
+.all-deals__results-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--clr-line);
+}
+
+.all-deals__results-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--clr-espresso-soft);
+}
+
+.all-deals__clear {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-sage-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.all-deals__clear:hover {
+  color: var(--clr-espresso);
+}
+
+.all-deals__empty {
+  margin-top: 60px;
+  color: var(--clr-espresso-soft);
+  font-size: 1.02rem;
+}
+
+.all-deals__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 46px;
+}
+
+/* Plain, uniform cards — no clip-path wave and no row/column offsets. */
+.all-deals__grid .deal-card {
+  margin-top: 0;
+}
+
+.all-deals__grid .deal-card__image-wrap {
+  clip-path: none;
+}
+
+@media (max-width: 980px) {
+  .all-deals__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .all-deals__grid {
+    grid-template-columns: 1fr;
+  }
+}

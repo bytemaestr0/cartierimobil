@@ -1,0 +1,137 @@
+.price-search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--clr-cream);
+  border: 1px solid var(--clr-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float-sm);
+  padding: 12px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.price-search__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.price-search__field {
+  flex: 1 1 150px;
+  min-width: 0;
+}
+
+.price-search__field--narrow {
+  flex: 1 1 110px;
+}
+
+.price-search__field--keyword {
+  flex: 2.4 1 220px;
+}
+
+.price-search__field--wide {
+  flex: 1.4 1 170px;
+}
+
+.price-search__field select,
+.price-search__field input {
+  width: 100%;
+  border: 1px solid var(--clr-line);
+  background: var(--clr-linen);
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--clr-espresso);
+  padding: 11px 14px;
+  border-radius: 999px;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+.price-search__field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b5d4f' stroke-width='1.6'><path d='M5 8l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 32px;
+}
+
+.price-search__field input::placeholder {
+  color: var(--clr-espresso-soft);
+  opacity: 0.75;
+}
+
+.price-search__field input::-webkit-outer-spin-button,
+.price-search__field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-search__cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  background: var(--clr-espresso);
+  color: var(--clr-cream);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 22px;
+  border-radius: 999px;
+  margin-left: auto;
+  transform-origin: center;
+  animation: price-search-pulse 2.2s linear infinite;
+}
+
+.price-search__cta:hover {
+  background: var(--clr-sage-deep);
+  animation-play-state: paused;
+}
+
+.price-search__cta svg {
+  flex: 0 0 auto;
+}
+
+@keyframes price-search-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+.price-search--compact {
+  max-width: 760px;
+}
+
+@media (max-width: 720px) {
+  .price-search {
+    max-width: 100%;
+  }
+
+  .price-search__field {
+    flex: 1 1 45%;
+  }
+
+  .price-search__field--keyword {
+    flex: 1 1 100%;
+  }
+
+  .price-search__cta {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
