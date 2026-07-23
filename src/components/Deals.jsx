@@ -19,9 +19,13 @@ function getWaveClass(index) {
   return `deal-card deal-card--wave-2${row > 0 ? ` deal-card--row-${row}` : ""}`;
 }
 
+const MAX_HOME_DEALS = 6;
+
 export default function Deals({ t, lang }) {
   const { deals, loading } = useDeals();
   const navigate = useNavigate();
+  const visibleDeals = deals.slice(0, MAX_HOME_DEALS);
+  const remainingCount = Math.max(deals.length - MAX_HOME_DEALS, 0);
 
   return (
     <section id="deals" className="deals">
@@ -44,7 +48,7 @@ export default function Deals({ t, lang }) {
           </div>
         ) : (
           <div className="deals__grid">
-            {deals.map((deal, i) => (
+            {visibleDeals.map((deal, i) => (
               <Reveal
                 as={Link}
                 to={`/deal/${deal.slug}`}
@@ -108,7 +112,7 @@ export default function Deals({ t, lang }) {
             className="btn btn--outline"
             onClick={() => navigateToTop(navigate, "/deals")}
           >
-            {t.deals.viewAll}
+            {t.deals.viewAll(remainingCount)}
           </button>
         </Reveal>
       </div>

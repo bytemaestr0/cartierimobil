@@ -14,7 +14,8 @@ export const translations = {
       title: "Proprietăți disponibile acum",
       subtitle: "Selecție actualizată constant, verificată de echipa noastră.",
       perMonth: "/lună",
-      viewAll: "Vezi toate ofertele",
+      viewAll: (remaining) =>
+        remaining > 0 ? `Vezi toate ofertele (${remaining}+)` : "Vezi toate ofertele",
       badge: { sale: "De vânzare", rent: "De închiriat" },
       specs: {
         bedOne: "cameră",
@@ -134,7 +135,8 @@ export const translations = {
       title: "Доступные объекты прямо сейчас",
       subtitle: "Подборка регулярно обновляется и проверяется нашей командой.",
       perMonth: "/мес",
-      viewAll: "Все предложения",
+      viewAll: (remaining) =>
+        remaining > 0 ? `Все предложения (${remaining}+)` : "Все предложения",
       badge: { sale: "Продажа", rent: "Аренда" },
       specs: {
         bedOne: "комната",
@@ -254,7 +256,8 @@ export const translations = {
       title: "Properties available now",
       subtitle: "A selection updated regularly and verified by our team.",
       perMonth: "/mo",
-      viewAll: "View all listings",
+      viewAll: (remaining) =>
+        remaining > 0 ? `View all listings (${remaining}+)` : "View all listings",
       badge: { sale: "For sale", rent: "For rent" },
       specs: {
         bedOne: "bed",
