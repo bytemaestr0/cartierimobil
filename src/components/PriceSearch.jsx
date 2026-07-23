@@ -4,7 +4,7 @@ import { toSlug } from "../lib/slug";
 import { navigateToTop } from "../lib/scrollTop";
 import "./PriceSearch.css";
 
-const SECTOR_KEYS = ["botanica", "centru", "riscani", "ciocana", "buiucani", "telecentru"];
+const SECTOR_KEYS = ["botanica", "centru", "riscani", "ciocana", "buiucani", "telecentru", "in-afara-orasului"];
 
 export default function PriceSearch({
   t,
