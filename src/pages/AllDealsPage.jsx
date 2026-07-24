@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import PriceSearch from "../components/PriceSearch";
+import SectionFloaters from "../components/SectionFloaters";
 import "../components/Deals.css";
 import "./AllDealsPage.css";
 
@@ -113,6 +114,7 @@ export default function AllDealsPage() {
     <>
       <Navbar t={t} lang={lang} setLang={setLang} />
       <main className="all-deals">
+        <SectionFloaters theme="light" />
         <div className="section-inner">
           <Reveal as="p" resetKey={lang} className="section-eyebrow">
             {t.deals.eyebrow}

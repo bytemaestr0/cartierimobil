@@ -1,0 +1,119 @@
+.section-floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-floater {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  filter: blur(0.3px);
+  animation: section-float-drift 17s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* --- Light theme (Deals, Story, all-deals page) --- */
+.section-floaters--light .section-floater--1 {
+  width: 180px;
+  height: 220px;
+  top: 10%;
+  left: 5%;
+  background: linear-gradient(155deg, var(--clr-sand), var(--clr-linen-deep));
+  box-shadow: var(--shadow-float-sm);
+  opacity: 0.75;
+  --rot: -6deg;
+  animation-duration: 16s;
+}
+
+.section-floaters--light .section-floater--2 {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  bottom: 8%;
+  right: 7%;
+  background: linear-gradient(155deg, var(--clr-brass-soft), var(--clr-sand));
+  box-shadow: var(--shadow-float-sm);
+  opacity: 0.65;
+  animation-duration: 21s;
+  animation-delay: -5s;
+}
+
+.section-floaters--light .section-floater--3 {
+  width: 110px;
+  height: 130px;
+  top: 58%;
+  left: 14%;
+  background: linear-gradient(155deg, var(--clr-sage), transparent);
+  opacity: 0.28;
+  animation-duration: 14s;
+  animation-delay: -8s;
+}
+
+/* --- Dark theme (Process, Footer) --- */
+.section-floaters--dark .section-floater--1 {
+  width: 190px;
+  height: 230px;
+  top: 12%;
+  right: 8%;
+  background: linear-gradient(155deg, rgba(217, 189, 133, 0.22), rgba(124, 140, 112, 0.08));
+  opacity: 0.7;
+  --rot: 7deg;
+  animation-duration: 18s;
+}
+
+.section-floaters--dark .section-floater--2 {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  bottom: 12%;
+  left: 6%;
+  background: linear-gradient(155deg, rgba(193, 154, 86, 0.24), rgba(245, 240, 230, 0.04));
+  opacity: 0.6;
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+.section-floaters--dark .section-floater--3 {
+  width: 100px;
+  height: 120px;
+  top: 50%;
+  right: 22%;
+  background: linear-gradient(155deg, rgba(124, 140, 112, 0.22), transparent);
+  opacity: 0.3;
+  animation-duration: 15s;
+  animation-delay: -3s;
+}
+
+@keyframes section-float-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(var(--rot, 0deg));
+  }
+  25% {
+    transform: translate(16px, -20px) rotate(calc(var(--rot, 0deg) + 4deg));
+  }
+  50% {
+    transform: translate(-12px, -6px) rotate(calc(var(--rot, 0deg) - 3deg));
+  }
+  75% {
+    transform: translate(10px, 18px) rotate(calc(var(--rot, 0deg) + 2deg));
+  }
+}
+
+@media (max-width: 860px) {
+  .section-floater--2,
+  .section-floater--3 {
+    display: none;
+  }
+  .section-floater--1 {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-floater {
+    animation: none;
+  }
+}

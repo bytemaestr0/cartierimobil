@@ -2,6 +2,12 @@
   position: relative;
   padding: 140px 0 100px;
   background: linear-gradient(180deg, var(--clr-linen) 0%, var(--clr-linen-deep) 100%);
+  overflow: hidden;
+}
+
+.all-deals > .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .all-deals__search-row {

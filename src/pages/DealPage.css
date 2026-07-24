@@ -1,7 +1,14 @@
 .deal-page {
+  position: relative;
   background: linear-gradient(180deg, var(--clr-linen) 0%, var(--clr-linen-deep) 100%);
   padding: 130px 0 100px;
   min-height: 60vh;
+  overflow: hidden;
+}
+
+.deal-page > .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .deal-page__back {

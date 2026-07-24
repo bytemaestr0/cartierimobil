@@ -9,6 +9,7 @@ import Carousel from "../components/Carousel";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import SectionFloaters from "../components/SectionFloaters";
 import "./DealPage.css";
 
 function getTitle(deal, lang) {
@@ -38,6 +39,7 @@ export default function DealPage() {
       <>
         <Navbar t={t} lang={lang} setLang={setLang} />
         <main className="deal-page">
+          <SectionFloaters theme="light" />
           <div className="section-inner deal-page__inner">
             <div className="deal-page__loading">Loading…</div>
           </div>
@@ -59,6 +61,7 @@ export default function DealPage() {
     <>
       <Navbar t={t} lang={lang} setLang={setLang} />
       <main className="deal-page">
+        <SectionFloaters theme="light" />
         <div className="section-inner deal-page__inner">
           <Reveal as={Link} to="/" resetKey={lang} className="deal-page__back">
             <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">

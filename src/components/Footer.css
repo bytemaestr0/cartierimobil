@@ -3,6 +3,12 @@
   padding: 90px 0 0;
   background: linear-gradient(180deg, var(--clr-espresso) 0%, #2b241d 100%);
   color: var(--clr-linen);
+  overflow: hidden;
+}
+
+.footer > .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .footer .section-eyebrow {

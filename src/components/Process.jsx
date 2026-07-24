@@ -1,9 +1,11 @@
 import Reveal from "./Reveal";
+import SectionFloaters from "./SectionFloaters";
 import "./SplitSection.css";
 
 export default function Process({ t, lang }) {
   return (
     <section id="process" className="split-section split-section--process split-section--reverse">
+      <SectionFloaters theme="dark" />
       <div className="section-inner split-section__inner">
         <Reveal as="div" resetKey={lang} className="split-section__media">
           <img

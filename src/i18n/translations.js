@@ -8,6 +8,11 @@ export const translations = {
       subtitle:
         "Suntem o agenție imobiliară din Chișinău, cu peste 3 ani de experiență și peste 1000 de clienți mulțumiți. Vă ajutăm să găsiți locul care chiar simte a acasă — transparent, personal și fără presiune.",
       cta: "Vezi ofertele",
+      stats: {
+        housesLabel: "case",
+        apartmentsLabel: "apartamente",
+        bedroomsLabel: "camere oferite",
+      },
     },
     deals: {
       eyebrow: "Oferte curente",
@@ -129,6 +134,11 @@ export const translations = {
       subtitle:
         "Мы — агентство недвижимости в Кишинёве с более чем 3-летним опытом и свыше 1000 довольных клиентов. Поможем найти место, которое действительно ощущается как дом — прозрачно, персонально и без давления.",
       cta: "Смотреть предложения",
+      stats: {
+        housesLabel: "домов",
+        apartmentsLabel: "квартир",
+        bedroomsLabel: "комнат в наличии",
+      },
     },
     deals: {
       eyebrow: "Текущие предложения",
@@ -250,6 +260,11 @@ export const translations = {
       subtitle:
         "We're a real estate agency in Chișinău with over 3 years of experience and 1000+ satisfied clients. We'll help you find a place that actually feels like home — transparent, personal, and without pressure.",
       cta: "View listings",
+      stats: {
+        housesLabel: "houses",
+        apartmentsLabel: "apartments",
+        bedroomsLabel: "bedrooms offered",
+      },
     },
     deals: {
       eyebrow: "Current listings",

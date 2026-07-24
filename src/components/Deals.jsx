@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Reveal from "./Reveal";
+import SectionFloaters from "./SectionFloaters";
 import { useDeals } from "../hooks/useDeals";
 import { formatBedsLabel, formatBathsLabel } from "../lib/formatSpecs";
 import { navigateToTop } from "../lib/scrollTop";
@@ -29,6 +30,7 @@ export default function Deals({ t, lang }) {
 
   return (
     <section id="deals" className="deals">
+      <SectionFloaters theme="light" />
       <div className="section-inner">
         <Reveal as="p" resetKey={lang} className="section-eyebrow">
           {t.deals.eyebrow}

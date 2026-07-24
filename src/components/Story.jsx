@@ -1,9 +1,11 @@
 import Reveal from "./Reveal";
+import SectionFloaters from "./SectionFloaters";
 import "./SplitSection.css";
 
 export default function Story({ t, lang }) {
   return (
     <section id="story" className="split-section split-section--story">
+      <SectionFloaters theme="light" />
       <div className="section-inner split-section__inner">
         <Reveal as="div" resetKey={lang} className="split-section__text">
           <p className="section-eyebrow">{t.story.eyebrow}</p>

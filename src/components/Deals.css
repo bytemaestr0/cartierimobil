@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.deals > .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
 .deals__subtitle {
   color: var(--clr-espresso-soft);
   font-size: 1.05rem;

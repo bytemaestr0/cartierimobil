@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SectionFloaters from "./SectionFloaters";
 import "./Footer.css";
 
 export default function Footer({ t, lang }) {
@@ -6,6 +7,7 @@ export default function Footer({ t, lang }) {
 
   return (
     <footer id="contact" className="footer">
+      <SectionFloaters theme="dark" />
       <div className="section-inner">
         <Reveal as="p" resetKey={lang} className="section-eyebrow section-eyebrow--light">
           {t.contact.eyebrow}

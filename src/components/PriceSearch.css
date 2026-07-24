@@ -8,7 +8,7 @@
   box-shadow: var(--shadow-float-sm);
   padding: 12px;
   width: 100%;
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -112,7 +112,29 @@
 }
 
 .price-search--compact {
-  max-width: 760px;
+  max-width: 940px;
+}
+
+/* --- Glass variant, used on the hero photo background --- */
+.price-search--glass {
+  background: rgba(251, 248, 242, 0.16);
+  border-color: rgba(245, 240, 230, 0.3);
+  box-shadow: none;
+}
+
+.price-search--glass .price-search__field select,
+.price-search--glass .price-search__field input {
+  background: rgba(251, 248, 242, 0.92);
+  border-color: rgba(245, 240, 230, 0.5);
+}
+
+.price-search--glass .price-search__cta {
+  background: var(--clr-espresso);
+  color: var(--clr-cream);
+}
+
+.price-search--glass .price-search__cta:hover {
+  background: var(--clr-sage-deep);
 }
 
 @media (max-width: 720px) {
