@@ -1,44 +1,30 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/brand/logo.png";
-import "./LanguageTransition.css";
 import "./PageLoadTransition.css";
 
-// Same wipe/panel/logo visual as LanguageTransition, but driven by the
-// deals fetch instead of a language switch, and shown only once on the
-// very first load so users see the brand animation instead of a blank
-// page or skeleton while Airtable data comes in.
+// Lightweight two-dot loader shown only once on the very first load,
+// while deals data comes in from Airtable. Fades out as soon as data
+// is ready instead of the previous logo wipe overlay.
 export default function PageLoadTransition({ ready }) {
   const [mounted, setMounted] = useState(true);
-  const [revealed, setRevealed] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    // Let the panels finish covering the screen before we consider the
-    // overlay "settled" and eligible to unmount once data is ready.
-    const t = setTimeout(() => setRevealed(true), 50);
+    if (!ready) return undefined;
+    setExiting(true);
+    const t = setTimeout(() => setMounted(false), 400);
     return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    if (!ready || !revealed) return undefined;
-    const t = setTimeout(() => setMounted(false), 550);
-    return () => clearTimeout(t);
-  }, [ready, revealed]);
+  }, [ready]);
 
   if (!mounted) return null;
 
-  const exiting = ready && revealed;
-
   return (
     <div
-      className={`lang-transition page-load-transition ${
-        exiting ? "page-load-transition--exit" : "lang-transition--active"
-      }`}
+      className={`page-load-transition ${exiting ? "page-load-transition--exit" : ""}`}
       aria-hidden="true"
     >
-      <div className="lang-transition__panel lang-transition__panel--a" />
-      <div className="lang-transition__panel lang-transition__panel--b" />
-      <div className="lang-transition__mark">
-        <img src={logo} alt="" className="lang-transition__logo page-load-transition__logo" />
+      <div className="page-load-transition__dots">
+        <span className="page-load-transition__dot" />
+        <span className="page-load-transition__dot" />
       </div>
     </div>
   );
