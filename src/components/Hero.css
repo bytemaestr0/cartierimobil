@@ -18,8 +18,8 @@
   object-fit: cover;
   object-position: center 65%;
   z-index: -2;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 99%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 99%, transparent 100%);
 }
 
 .hero__scrim {
@@ -45,7 +45,7 @@
   bottom: 0;
   height: clamp(180px, 34vh, 380px);
   z-index: -1;
-  background: linear-gradient(180deg, transparent 0%, var(--clr-linen) 88%);
+  background: linear-gradient(180deg, transparent 0%, var(--clr-linen) 98%);
   pointer-events: none;
 }
 

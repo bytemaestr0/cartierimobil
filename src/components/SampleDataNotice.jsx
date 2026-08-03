@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useDeals } from "../hooks/useDeals";
+import { useDealsContext } from "../data/DealsContext";
 import "./SampleDataNotice.css";
 
 export default function SampleDataNotice() {
-  const { usingSampleData } = useDeals();
+  const { usingSampleData } = useDealsContext();
   const [dismissed, setDismissed] = useState(false);
 
   // Only ever shown in local/dev builds — never in a production build,

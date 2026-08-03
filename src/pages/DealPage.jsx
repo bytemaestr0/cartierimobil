@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useLanguageContext } from "../i18n/LanguageContext";
-import { useDeals } from "../hooks/useDeals";
+import { useDealsContext } from "../data/DealsContext";
 import { formatBedsLabel, formatBathsLabel } from "../lib/formatSpecs";
 
 import Navbar from "../components/Navbar";
@@ -27,7 +27,7 @@ function getDescription(deal, lang) {
 export default function DealPage() {
   const { slug } = useParams();
   const { lang, setLang, t } = useLanguageContext();
-  const { deals, loading } = useDeals();
+  const { deals, loading } = useDealsContext();
   const deal = deals.find((d) => d.slug === slug);
 
   useEffect(() => {

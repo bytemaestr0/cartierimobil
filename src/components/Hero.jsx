@@ -2,12 +2,12 @@ import { useMemo } from "react";
 import Reveal from "./Reveal";
 import PriceSearch from "./PriceSearch";
 import CountUp from "./CountUp";
-import { useDeals } from "../hooks/useDeals";
+import { useDealsContext } from "../data/DealsContext";
 import heroBg from "../assets/hero/hero-bg.jpg";
 import "./Hero.css";
 
 export default function Hero({ t, lang }) {
-  const { deals, loading } = useDeals();
+  const { deals, loading } = useDealsContext();
 
   const stats = useMemo(() => {
     if (loading) return null;

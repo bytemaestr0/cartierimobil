@@ -80,6 +80,17 @@ export default function Footer({ t, lang }) {
         <div className="footer__bottom">
           <span>Cartier Imobil © {year}</span>
           <span>{t.contact.rights}</span>
+          <span>
+            Realizat de Pavel Ciprian —{" "}
+            <a
+              href="https://pavelciprian.vercel.app"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="footer__credit-link"
+            >
+              pavelciprian.vercel.app
+            </a>
+          </span>
         </div>
       </div>
     </footer>

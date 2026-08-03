@@ -1,0 +1,35 @@
+.page-load-transition {
+  z-index: 400;
+}
+
+.page-load-transition__logo {
+  width: 112px;
+  height: 112px;
+}
+
+/* Reverse of the language-transition wipe: panels lift away upward and
+   the mark fades/settles down slightly, revealing the loaded page. */
+.page-load-transition--exit .lang-transition__panel {
+  transform: translateY(-100%);
+}
+
+.page-load-transition--exit .lang-transition__panel--a {
+  transition-delay: 0.05s;
+}
+
+.page-load-transition--exit .lang-transition__panel--b {
+  transition-delay: 0s;
+}
+
+.page-load-transition--exit .lang-transition__mark {
+  opacity: 0;
+  transform: scale(0.9) translateY(8px);
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-load-transition .lang-transition__panel,
+  .page-load-transition .lang-transition__mark {
+    transition: none;
+  }
+}

@@ -100,6 +100,17 @@
   color: rgba(245, 240, 230, 0.55);
 }
 
+.footer__credit-link {
+  color: var(--clr-brass-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.25s ease;
+}
+
+.footer__credit-link:hover {
+  color: var(--clr-linen);
+}
+
 @media (max-width: 720px) {
   .footer__grid {
     grid-template-columns: 1fr;

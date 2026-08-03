@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Reveal from "./Reveal";
 import SectionFloaters from "./SectionFloaters";
-import { useDeals } from "../hooks/useDeals";
+import { useDealsContext } from "../data/DealsContext";
 import { formatBedsLabel, formatBathsLabel } from "../lib/formatSpecs";
 import { navigateToTop } from "../lib/scrollTop";
 import "./Deals.css";
@@ -23,7 +23,7 @@ function getWaveClass(index) {
 const MAX_HOME_DEALS = 6;
 
 export default function Deals({ t, lang }) {
-  const { deals, loading } = useDeals();
+  const { deals, loading } = useDealsContext();
   const navigate = useNavigate();
   const visibleDeals = deals.slice(0, MAX_HOME_DEALS);
   const remainingCount = Math.max(deals.length - MAX_HOME_DEALS, 0);
@@ -42,13 +42,7 @@ export default function Deals({ t, lang }) {
           {t.deals.subtitle}
         </Reveal>
 
-        {loading ? (
-          <div className="deals__grid">
-            {[0, 1, 2].map((i) => (
-              <div className={`deal-card deal-card--skeleton ${getWaveClass(i)}`} key={i} aria-hidden="true" />
-            ))}
-          </div>
-        ) : (
+        {!loading && (
           <div className="deals__grid">
             {visibleDeals.map((deal, i) => (
               <Reveal
@@ -108,15 +102,17 @@ export default function Deals({ t, lang }) {
           </div>
         )}
 
-        <Reveal resetKey={lang} className="deals__cta-row">
-          <button
-            type="button"
-            className="btn btn--outline"
-            onClick={() => navigateToTop(navigate, "/deals")}
-          >
-            {t.deals.viewAll(remainingCount)}
-          </button>
-        </Reveal>
+        {!loading && (
+          <Reveal resetKey={lang} className="deals__cta-row">
+            <button
+              type="button"
+              className="btn btn--outline"
+              onClick={() => navigateToTop(navigate, "/deals")}
+            >
+              {t.deals.viewAll(remainingCount)}
+            </button>
+          </Reveal>
+        )}
       </div>
     </section>
   );

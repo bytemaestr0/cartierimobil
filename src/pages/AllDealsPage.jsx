@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLanguageContext } from "../i18n/LanguageContext";
-import { useDeals } from "../hooks/useDeals";
+import { useDealsContext } from "../data/DealsContext";
 import { parsePrice } from "../lib/price";
 import { toSlug } from "../lib/slug";
 import { normalizeText } from "../lib/normalizeText";
@@ -23,7 +23,7 @@ function getTitle(deal, lang) {
 
 export default function AllDealsPage() {
   const { lang, setLang, t } = useLanguageContext();
-  const { deals, loading } = useDeals();
+  const { deals, loading } = useDealsContext();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const keywordParam = searchParams.get("q") || "";

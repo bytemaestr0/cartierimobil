@@ -20,7 +20,7 @@
 }
 
 .lang-transition__panel--b {
-  background: var(--clr-sage-deep);
+  background: var(--clr-sand);
   transition-delay: 0.06s;
   opacity: 0.85;
 }
